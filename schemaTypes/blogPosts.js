@@ -72,8 +72,8 @@ export const postType = defineType({
       initialValue: false,
     }),
     defineField({
-      name: 'context',
-      title: 'Post Context',
+      name: 'summary',
+      title: 'Summary',
       type: 'array',
       of: [
         {
@@ -146,7 +146,7 @@ export const postType = defineType({
         {
           type: 'image',
           name: 'subImage',
-          title: 'Sub Image',
+          title: 'Image',
           options: {
             hotspot: true,
           },
@@ -155,7 +155,7 @@ export const postType = defineType({
         {
           type: 'code',
           name: 'codeblock',
-          title: 'Code Block',
+          title: 'Code',
           options: {
             language: 'python',
             withFileName: true,
@@ -167,6 +167,19 @@ export const postType = defineType({
               {title: 'R', value: 'r'},
             ],
           },
+        },
+        {
+          type: 'object',
+          name: 'video',
+          title: 'Video',
+          fields: [
+            {
+              name: 'url',
+              type: 'url',
+              title: 'Video URL',
+              description: 'Paste the full link here',
+            },
+          ],
         },
       ],
       validation: (rule) => rule.required(),
