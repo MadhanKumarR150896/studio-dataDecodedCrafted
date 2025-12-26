@@ -19,13 +19,13 @@ export const postType = defineType({
           title: 'Alternative Text',
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'title',
       title: 'Post Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'slug',
@@ -35,7 +35,7 @@ export const postType = defineType({
         source: 'title',
         maxLength: 150,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'publishedAt',
@@ -49,10 +49,11 @@ export const postType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'tag',
-      title: 'Tag',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      name: 'postTag',
+      title: 'Select Tag',
+      type: 'reference',
+      to: [{type: 'category'}],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'keywords',
@@ -62,7 +63,7 @@ export const postType = defineType({
       options: {
         layout: 'tags',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'featured',
@@ -90,8 +91,7 @@ export const postType = defineType({
           },
         },
       ],
-      validation: (rule) =>
-        rule.required().error('The Context field is mandatory. You cannot publish without it.'),
+      validation: (rule) => rule.required().warning(),
     }),
     defineField({
       name: 'content',
@@ -108,6 +108,7 @@ export const postType = defineType({
             {title: 'H2', value: 'h2'},
             {title: 'H3', value: 'h3'},
             {title: 'H4', value: 'h4'},
+            {title: 'H5', value: 'h5'},
             {title: 'Quote', value: 'blockquote'},
           ],
           lists: [
@@ -168,21 +169,21 @@ export const postType = defineType({
           },
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (rule) => rule.required(),
     }),
   ],
   preview: {
     select: {
       title: 'title',
       date: 'publishedAt',
-      tag: 'tag',
+      tag: 'postTag.tag',
     },
     prepare(selection) {
       const {title, date, tag} = selection
 
       return {
         title: title,
-        subtitle: `Tag: ${tag ? tag : 'No Tag'} - Date: ${date ? date.split('T')[0] : 'No date'}`,
+        subtitle: `Tag: ${tag ? tag : 'No Tag'} | Date: ${date ? date.split('T')[0] : 'No date'}`,
       }
     },
   },
