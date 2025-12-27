@@ -6,10 +6,10 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'DataDecodedCrafted',
+  title: import.meta.env.SANITY_STUDIO_PROJECT_NAME,
 
-  projectId: 'v9e79usq',
-  dataset: 'development',
+  projectId: import.meta.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: import.meta.env.SANITY_STUDIO_DATASET,
 
   plugins: [structureTool(), visionTool(), codeInput()],
 

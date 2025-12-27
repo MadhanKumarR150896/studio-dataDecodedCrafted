@@ -1,9 +1,13 @@
+/* eslint-disable no-undef */
 import {defineCliConfig} from 'sanity/cli'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 export default defineCliConfig({
   api: {
-    projectId: 'v9e79usq',
-    dataset: 'development'
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+    dataset: process.env.SANITY_STUDIO_DATASET,
   },
   deployment: {
     /**
@@ -11,5 +15,5 @@ export default defineCliConfig({
      * Learn more at https://www.sanity.io/docs/cli#auto-updates
      */
     autoUpdates: true,
-  }
+  },
 })
