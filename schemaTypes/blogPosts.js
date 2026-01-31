@@ -82,12 +82,16 @@ export const postType = defineType({
             spellCheck: true,
           },
           styles: [],
-          lists: [{title: 'Bullet', value: 'bullet'}],
+          lists: [
+            {title: 'Bullet', value: 'bullet'},
+            {title: 'Numbered', value: 'number'},
+          ],
           marks: {
             decorators: [
               {title: 'Strong', value: 'strong'},
               {title: 'Emphasis', value: 'em'},
             ],
+            annotations: [],
           },
         },
       ],
