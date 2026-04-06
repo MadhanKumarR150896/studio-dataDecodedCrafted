@@ -1,9 +1,14 @@
-# Sanity Clean Content Studio
+# Custom Sanity Content Studio for dataDecodedCrafted (https://dev-datadecodedcrafted.onrender.com/)
 
-Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
+Built a fully responsive blog for a client to share technical insights about **Databricks** and data engineering. Integrated **Sanity.io** as headless CMS, enabling independent content management without developer involvement.
 
-Now you can do the following things:
+## Author
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the Sanity community](https://www.sanity.io/community/join?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+- GitHub: [@MadhanKumarR150896](https://github.com/MadhanKumarR150896)
+- LinkedIn: [@Madhan Kumar Ranganathan](https://www.linkedin.com/in/madhan-kumar-ranganathan-003359271/)
+
+### Headless CMS - Sanity Studio
+
+|                   View 1                    |                   View 2                    |                   View 3                    |                   View 4                    |
+| :-----------------------------------------: | :-----------------------------------------: | :-----------------------------------------: | :-----------------------------------------: |
+| ![View 1](/public/images/Studio_view_1.png) | ![View 2](/public/images/Studio_view_2.png) | ![View 3](/public/images/Studio_view_3.png) | ![View 4](/public/images/Studio_view_4.png) |
