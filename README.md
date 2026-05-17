@@ -1,4 +1,4 @@
-# Custom Sanity Content Studio for dataDecodedCrafted (https://dev-datadecodedcrafted.onrender.com/)
+# Custom Sanity Content Studio for dataDecodedCrafted (https://ddc.madkum.com/)
 
 Built a fully responsive blog for a client to share technical insights about **Databricks** and data engineering. Integrated **Sanity.io** as headless CMS, enabling independent content management without developer involvement.
 
